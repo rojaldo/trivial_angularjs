@@ -19,6 +19,11 @@
 
             } else {
                 vm.cards[cardIndex].buttonClass[answerIndex] = 'btn btn-large btn-block btn-danger';
+                for (var index = 0; index < vm.cards[cardIndex].answers.length; index++) {
+                    if (vm.cards[cardIndex].rightAnswer === vm.cards[cardIndex].answers[index]) {
+                        vm.cards[cardIndex].buttonClass[index] = 'btn btn-large btn-block btn-warning';
+                    }
+                }
                 $log.info('Wrong Answer');
             }
         }
